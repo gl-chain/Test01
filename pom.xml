@@ -19,7 +19,30 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <scm.url>https://github.com/chengl-huxt/Test01.git</scm.url>
+        <scm.username>chengl-huxt</scm.username>
+        <scm.password>chengl.199518</scm.password>
     </properties>
+    <scm>
+        <!--release包需要放入的nexus地址或者其他的maven release包的仓库url地址-->
+        <url>${scm.url</url>
+        <!--connection,developerConnection:都是连接字符串,后者是具有write权限的scm连接-->
+        <!--需要打包的项目的git地址-->
+        <developerConnection>scm:git:${scm.url}</developerConnection>
+        <connection>scm:git:${scm.url}</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>release</id>
+            <url>http://localhost:8081/repository/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://localhost:8081/repository/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -43,6 +66,22 @@
                     <excludes>
                         <exclude>*.yml</exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <tagBase>git:https://github.com/chengl-huxt/Test01/tags/</tagBase>
+                    <branchBase>git:https://github.com/chengl-huxt/Test01/branches</branchBase>
+                    <tagNameFormat>@{version}</tagNameFormat>
+                    <username>${scm.username}</username>
+                    <password>${scm.password}</password>
+                    <checkModificationExcludes>
+                        <checkModificationExclude>.project</checkModificationExclude>
+                        <checkModificationExclude>.settings</checkModificationExclude>
+                        <checkModificationExclude>.classpath</checkModificationExclude>
+                    </checkModificationExcludes>
                 </configuration>
             </plugin>
             <plugin>
