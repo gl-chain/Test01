@@ -35,12 +35,12 @@
 
     <distributionManagement>
         <repository>
-            <id>release</id>
-            <url>http://localhost:8081/repository/release</url>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2360656-release-MRkvOd/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://localhost:8081/repository/snapshots</url>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2360656-snapshot-5lDyoW/</url>
         </snapshotRepository>
     </distributionManagement>
 
