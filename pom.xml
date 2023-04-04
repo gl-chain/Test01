@@ -69,15 +69,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <scmCommentPrefix>release(all):</scmCommentPrefix>
                     <tagNameFormat>v{project.version}</tagNameFormat>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <arguments>-DskipTests</arguments>
-                    <tagBase>https://github.com/chengl-huxt/Test01.git/tags</tagBase>
-                    <checkModificationExcludes>
-                        <checkModificationExclude>.project</checkModificationExclude>
-                        <checkModificationExclude>.classpath</checkModificationExclude>
-                    </checkModificationExcludes>
                 </configuration>
             </plugin>
             <plugin>
