@@ -29,7 +29,7 @@
         <!--需要打包的项目的git地址-->
         <developerConnection>scm:git:${scm.url}</developerConnection>
         <connection>scm:git:${scm.url}</connection>
-        <tag>0.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
