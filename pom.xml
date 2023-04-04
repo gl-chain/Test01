@@ -21,10 +21,12 @@
     </properties>
 
     <scm>
+        <tag>HEAD</tag>
+        <url>https://github.com/chengl-huxt/Test01.git</url>
         <!--connection,developerConnection:都是连接字符串,后者是具有write权限的scm连接-->
         <!--需要打包的项目的git地址-->
-        <developerConnection>scm:git:https://github.com/chengl-huxt/Test01.git</developerConnection>
         <connection>scm:git:https://github.com/chengl-huxt/Test01.git</connection>
+        <developerConnection>scm:git:https://github.com/chengl-huxt/Test01.git</developerConnection>
     </scm>
 
     <distributionManagement>
@@ -65,11 +67,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
                 <configuration>
+                    <scmCommentPrefix>release(all):</scmCommentPrefix>
+                    <tagNameFormat>v{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <generateReleasePoms>false</generateReleasePoms>
                     <arguments>-DskipTests</arguments>
+                    <tagBase>https://github.com/chengl-huxt/Test01.git/tags</tagBase>
+                    <checkModificationExcludes>
+                        <checkModificationExclude>.project</checkModificationExclude>
+                        <checkModificationExclude>.classpath</checkModificationExclude>
+                    </checkModificationExcludes>
                 </configuration>
             </plugin>
             <plugin>
