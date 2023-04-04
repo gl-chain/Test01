@@ -25,7 +25,7 @@
     </properties>
     <scm>
         <!--release包需要放入的nexus地址或者其他的maven release包的仓库url地址-->
-        <url>${scm.url</url>
+        <url>${scm.url}</url>
         <!--connection,developerConnection:都是连接字符串,后者是具有write权限的scm连接-->
         <!--需要打包的项目的git地址-->
         <developerConnection>scm:git:${scm.url}</developerConnection>
