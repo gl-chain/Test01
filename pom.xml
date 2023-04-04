@@ -10,7 +10,7 @@
 
     <groupId>com.chengl</groupId>
     <artifactId>Test01</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Test01</name>
@@ -21,7 +21,7 @@
     </properties>
 
     <scm>
-        <tag>Test01-0.0.1</tag>
+        <tag>HEAD</tag>
         <url>https://github.com/chengl-huxt/Test01.git</url>
         <!--connection,developerConnection:都是连接字符串,后者是具有write权限的scm连接-->
         <!--需要打包的项目的git地址-->
@@ -68,7 +68,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
-                    <useReleaseProfile>true</useReleaseProfile>
+                    <useReleaseProfile>false</useReleaseProfile>
                     <goals>deploy</goals>
                     <checkModificationExcludes>
                         <checkModificationExclude>.idea</checkModificationExclude>
