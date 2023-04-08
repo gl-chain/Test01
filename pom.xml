@@ -25,8 +25,8 @@
         <url>https://packages.aliyun.com/maven/repository/2360656-release-MRkvOd/</url>
         <!--connection,developerConnection:都是连接字符串,后者是具有write权限的scm连接-->
         <!--需要打包的项目的git地址-->
-        <connection>scm:git@github.com:chengl-huxt/Test01.git</connection>
-        <developerConnection>scm:git@github.com:chengl-huxt/Test01.git</developerConnection>
+        <connection>scm:git:git@github.com:chengl-huxt/Test01.git</connection>
+        <developerConnection>scm:git:git@github.com:chengl-huxt/Test01.git</developerConnection>
     </scm>
 
     <distributionManagement>
