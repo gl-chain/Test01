@@ -4,7 +4,8 @@
 - cd jre
 - 删除不必要文件
 - rm -rf COPYRIGHT LICENSE README release THIRDPARTYLICENSEREADME-JAVAFX.txt THIRDPARTYLICENSEREADME.txt Welcome.html
-- rm -rf  lib/plugin.jar \
+- ```
+  rm -rf  lib/plugin.jar \
            lib/ext/jfxrt.jar \
            bin/javaws \
            lib/javaws.jar \
@@ -20,11 +21,14 @@
            lib/amd64/libgstreamer-lite.so \
            lib/amd64/libjavafx*.so \
            lib/amd64/libjfx*.so
+  ```
   - 新建Dockerfile文件并写入以下内容：
-  - FROM docker.io/frolvlad/alpine-glibc
+  - ```
+    FROM docker.io/frolvlad/alpine-glibc
     COPY jre8/ /usr/local/jre
     ENV JAVA_HOME /usr/local/jre
     ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
     ENV PATH $PATH:$JAVA_HOME/bin
+    ```
   - 构建JRE8镜像:
   - docker build -t jre:8 .  
