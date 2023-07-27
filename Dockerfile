@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM jre:8
 WORKDIR /opt/app
 COPY ./target/Test01-0.0.1-SNAPSHOT.tar.gz ./
 RUN tar -zxvf Test01-0.0.1-SNAPSHOT.tar.gz -C ./ \
