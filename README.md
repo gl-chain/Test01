@@ -3,6 +3,6 @@
 - 本地执行 docker login --username=18565628124 registry.cn-hangzhou.aliyuncs.com 键入密码 chengl.199518
 - 本地执行 docker tag app:v1.0.0 registry.cn-hangzhou.aliyuncs.com/命名空间/app:latest
 - 本地执行 docker push registry.cn-hangzhou.aliyuncs.com/命名空间/app:latest
-- 拉取镜像 docker pull registry.cn-hangzhou.aliyuncs.com/命名空间/app:v1.0.0
-- 部署执行 docker run -itd --name app_test -p 8080:8080 -v 宿主机目录:/${logging.path} app:v1.0.0
+- 拉取镜像 docker pull registry.cn-hangzhou.aliyuncs.com/命名空间/app:latest
+- 部署执行 docker run -itd --name app_test -p 8080:8080 -v 宿主机目录:/${logging.path} registry.cn-hangzhou.aliyuncs.com/命名空间/app:latest
 - 测试应用 curl 宿主机ip:8080/ping -X GET
