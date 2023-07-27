@@ -1,0 +1,7 @@
+- 本地执行 mvn clean package 打包 查看命令行项目打包成功，在target目录下出现了*.tar.gz文件
+- 本地执行 docker build -t app:v1.0.0 . 查看命令行，docker镜像构建成功
+- 本地执行 docker login --username=18565628124 registry.cn-hangzhou.aliyuncs.com 键入密码 chengl.199518
+- 本地执行 docker push registry.cn-hangzhou.aliyuncs.com/命名空间/app:v1.0.0
+- 拉取镜像 docker pull registry.cn-hangzhou.aliyuncs.com/命名空间/app:v1.0.0
+- 部署执行 docker run -itd --name app_test -p 8080:8080 -v 宿主机目录:/${logging.path} app:v1.0.0
+- 测试应用 curl 宿主机ip:8080/ping -X GET
